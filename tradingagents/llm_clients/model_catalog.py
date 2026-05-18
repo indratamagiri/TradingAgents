@@ -175,6 +175,43 @@ MODEL_OPTIONS: ProviderModeOptions = {
             ("Custom model ID", "custom"),
         ],
     },
+    "opencode": {
+        "quick": [
+            ("GPT-5.4 Mini - Fast, strong coding and tool use", "gpt-5.4-mini"),
+            ("GPT-5.4 Nano - Cheapest, high-volume tasks", "gpt-5.4-nano"),
+            ("GLM 5.1 - Latest GLM flagship, 204K ctx", "glm-5.1"),
+            ("MiniMax M2.5 - Previous-gen flagship, 204K ctx", "minimax-m2.5"),
+            ("Nemotron 3 Super (free)", "nemotron-3-super-free"),
+            ("Custom model ID", "custom"),
+        ],
+        "deep": [
+            ("GPT-5.5 - Latest frontier, 1M context", "gpt-5.5"),
+            ("GPT-5.4 - Previous-gen frontier, 1M ctx", "gpt-5.4"),
+            ("Claude Opus 4.7 - Latest frontier, agents and coding", "claude-opus-4-7"),
+            ("Claude Sonnet 4.6 - Best speed and intelligence balance", "claude-sonnet-4-6"),
+            ("GLM 5.1 - Latest GLM flagship, 204K ctx", "glm-5.1"),
+            ("Kimi K2.6 - Moonshot flagship", "kimi-k2.6"),
+            ("Custom model ID", "custom"),
+        ],
+    },
+    "opencode-go": {
+        "quick": [
+            ("DeepSeek V4 Flash - Fast, efficient, high volume", "deepseek-v4-flash"),
+            ("Qwen3.5 Plus - Cost-effective, previous-gen", "qwen3.5-plus"),
+            ("MiMo-V2.5 - Cost-efficient, large context", "mimo-v2.5"),
+            ("GLM-5 - Previous-gen flagship", "glm-5"),
+            ("Custom model ID", "custom"),
+        ],
+        "deep": [
+            ("DeepSeek V4 Pro - Latest DeepSeek flagship model", "deepseek-v4-pro"),
+            ("Qwen3.6 Plus - Flagship vision-language, SOTA", "qwen3.6-plus"),
+            ("MiMo-V2.5-Pro - High-capability reasoning model", "mimo-v2.5-pro"),
+            ("GLM-5.1 - Latest GLM flagship, 204K ctx", "glm-5.1"),
+            ("Kimi K2.6 - Moonshot flagship", "kimi-k2.6"),
+            ("MiniMax M2.7 - Coding/agent SOTA, 204K ctx", "minimax-m2.7"),
+            ("Custom model ID", "custom"),
+        ],
+    },
 }
 
 

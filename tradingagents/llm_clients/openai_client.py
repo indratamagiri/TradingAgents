@@ -157,6 +157,8 @@ _PROVIDER_BASE_URL = {
     "minimax":    "https://api.minimax.io/v1",
     "minimax-cn": "https://api.minimaxi.com/v1",
     "openrouter": "https://openrouter.ai/api/v1",
+    "opencode":   "https://opencode.ai/zen/v1",
+    "opencode-go": "https://opencode.ai/zen/go/v1",
     "ollama":     "http://localhost:11434/v1",
 }
 
@@ -234,9 +236,13 @@ class OpenAIClient(BaseLLMClient):
 
         # Provider-specific quirks live in their own subclasses so the
         # base NormalizedChatOpenAI stays free of provider branches.
-        if self.provider == "deepseek":
+        # Also consult per-model capabilities so models routed through
+        # third-party gateways (e.g. opencode-go/deepseek-v4-pro) still
+        # get provider-specific behaviour like reasoning roundtrips.
+        caps = get_capabilities(self.model)
+        if self.provider == "deepseek" or caps.requires_reasoning_content_roundtrip:
             chat_cls = DeepSeekChatOpenAI
-        elif self.provider in ("minimax", "minimax-cn"):
+        elif self.provider in ("minimax", "minimax-cn") or caps.requires_reasoning_split:
             chat_cls = MinimaxChatOpenAI
         else:
             chat_cls = NormalizedChatOpenAI
